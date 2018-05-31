@@ -10,7 +10,7 @@ class ProjectController {
     return user.projects().fetch()
   }
 
-  async create ({ auth, request }) {
+  async store ({ auth, request }) {
     const user = await auth.getUser()
     const { title } = request.all()
     const project = new Project()
