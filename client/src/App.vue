@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <v-app>
+      <toolbar />
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+      <router-view/>
+    </v-app>
   </div>
 </template>
+
+<script>
+import Toolbar from '@/components/Toolbar'
+
+export default {
+  components: {
+    Toolbar
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -16,6 +29,7 @@
   text-align: center;
   color: #2c3e50;
 }
+
 #nav {
   padding: 30px;
   a {
