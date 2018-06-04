@@ -22,7 +22,10 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
     "@vue/eslint-config-standard": "^3.0.0-beta.15",
+    "eslint": "^4.19.1",
+    "eslint-plugin-vue": "^4.5.0",
     "node-sass": "^4.9.0",
+    "prettier": "1.12.1",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.16"
   },
