@@ -24,9 +24,7 @@ import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
   methods: {
-    ...mapActions('authentication', [
-      'register'
-    ]),
+    ...mapActions('authentication', ['register']),
     ...mapMutations('authentication', [
       'setRegisterEmail',
       'setRegisterPassword'
