@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import router from '@/router'
+import { mapGetters } from 'vuex'
 import Toolbar from '@/components/Toolbar'
 
 export default {
@@ -20,6 +22,14 @@ export default {
   },
   components: {
     Toolbar
+  },
+  computed: {
+    ...mapGetters('authentication', ['isLoggedIn'])
+  },
+  mounted () {
+    if (!this.isLoggedIn) {
+      return router.push('/login')
+    }
   }
 }
 </script>
