@@ -47,6 +47,16 @@ export default {
         .then(({ data }) => {
           commit('setProjects', data)
         })
+    },
+    updateProject ({ commit, state }) {
+      return HTTP()
+        .post('projects', {
+          title: state.newProjectName
+        })
+        .then(({ data }) => {
+          commit('appendProject', data)
+          commit('setNewProjectName', null)
+        })
     }
   },
   getters: {}
