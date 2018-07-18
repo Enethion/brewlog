@@ -15,6 +15,16 @@
 
 const Route = use('Route')
 
-Route.get('/', ({ request }) => {
-  return { greeting: 'Hello world in JSON' }
-})
+//V0 of BrewLog API
+Route.group(() => {
+  //Authentication
+  Route.post('auth/register', 'UserController.register')
+  Route.post('auth/login', 'UserController.login')
+
+  //Posts
+  Route.resource('posts', 'PostController')
+
+  //Test path
+  Route.any('test', ({ request }) => {
+  })
+}).prefix('v0')
