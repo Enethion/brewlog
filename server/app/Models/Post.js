@@ -10,8 +10,10 @@ class Post extends Model {
       fields: {
         slug: 'title'
       },
-      strategy: () => {
-        const prefix = `${(new Date()).toISOString().slice(0,10).replace(/-/g,'/')}/`
+      strategy: async (field, value, modelInstance) => {
+        const dateSlug = (new Date()).toISOString().slice(0, 10).replace(/-/g, '/')
+
+        return `${dateSlug}/${value}`
       }
     })
   }

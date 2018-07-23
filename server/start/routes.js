@@ -22,7 +22,11 @@ Route.group(() => {
   Route.post('auth/login', 'UserController.login')
 
   //Posts
+  Route.get('posts/:year?/:month?/:day?', 'PostController.index')
+  Route.get('posts/:year/:month/:day/:titleSlug', 'PostController.show')
   Route.resource('posts', 'PostController')
+    .only(['store', 'update', 'destroy'])
+    .middleware('auth')
 
   //Test path
   Route.any('test', ({ request }) => {

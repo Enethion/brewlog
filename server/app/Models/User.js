@@ -3,6 +3,10 @@
 const Model = use('Model')
 
 class User extends Model {
+  static get visible () {
+    return ['username']
+  }
+
   static boot () {
     super.boot()
 

@@ -3,17 +3,26 @@
 const Schema = use('Schema')
 
 class PostSchema extends Schema {
-  up () {
+  up() {
     this.create('posts', (table) => {
       table.increments()
-      table.string('title', 255).notNullable()
-      table.text('content', 'longtext')
-      table.integer('user_id').unsigned().references('id').inTable('users')
+      table.string('title', 255)
+        .notNullable()
+      table.string('slug', 266)
+        .notNullable()
+        .unique()
+        .index()
+      table.text('body', 'longtext')
+      table.integer('user_id')
+        .unsigned()
+        .references('id')
+        .inTable('users')
+        .notNullable()
       table.timestamps()
     })
   }
 
-  down () {
+  down() {
     this.drop('posts')
   }
 }
