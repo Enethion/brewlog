@@ -50,6 +50,10 @@ module.exports = {
         loader: ['vue-style-loader', 'css-loader']
       },
       {
+        test: /\.scss$/,
+        loader: ['vue-style-loader', 'css-loader', 'sass-loader']
+      },
+      {
         test: /\.styl$/,
         loader: ['vue-style-loader', 'css-loader', 'stylus-loader']
       },

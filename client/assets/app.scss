@@ -1,0 +1,15 @@
+.v-card[horizontal] {
+  display: flex;
+
+  .card-image {
+    max-width: 50%;
+  }
+
+  .card-stacked {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    justify-content: space-between;
+  }
+}
