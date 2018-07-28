@@ -1,22 +1,19 @@
-# brewlog
+# Vuetify Webpack SSR Template
 
-> Blog
+> Vuetify SSR Webpack Template
 
 ## Build Setup
 
 ``` bash
-# install dependencies
-$ npm install # Or yarn install
+vue init vuetifyjs/webpack-ssr
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+cd webpack-ssr
 
-# build for production and launch server
-$ npm run build
-$ npm start
+# npm
+npm install
 
-# generate static project
-$ npm run generate
+# yarn
+yarn
 ```
 
-For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
+For additional information, please visit the [Official Documentation](https://vuetifyjs.com).

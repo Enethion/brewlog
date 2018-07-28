@@ -12,27 +12,33 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="teal" dark fixed app>
+    <v-toolbar color="primary" dark fixed app>
       <v-toolbar-side-icon class="hidden-lg-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-md-and-down">
-        <router-link class="v-btn--flat" tag="v-btn" :to="item.to" v-text="item.title" :key="i" v-for="(item, i) in items"></router-link>
+        <router-link class="v-btn v-btn--flat" tag="button" :to="item.to" v-text="item.title" :key="i" v-for="(item, i) in items"></router-link>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <v-container>
-        <nuxt />
+        <v-slide-y-transition mode="out-in">
+          <router-view></router-view>
+        </v-slide-y-transition>
       </v-container>
     </v-content>
-    <v-footer app>
+    <v-footer absolute app>
       <span>&copy; 2017</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+  import Meta from 'mixins/meta'
+
   export default {
+    mixins: [Meta],
+
     data () {
       return {
         drawer: false,

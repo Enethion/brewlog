@@ -1,9 +1,16 @@
-export const state = () => ({
-  sidebar: false
-})
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-export const mutations = {
-  toggleSidebar (state) {
-    state.sidebar = !state.sidebar
-  }
+Vue.use(Vuex)
+
+export function createStore () {
+  return new Vuex.Store({
+    state: {},
+
+    actions: {},
+
+    mutations: {},
+
+    getters: {}
+  })
 }
