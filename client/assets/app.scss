@@ -1,15 +1,24 @@
-.v-card[horizontal] {
-  display: flex;
-
-  .card-image {
-    max-width: 50%;
-  }
-
-  .card-stacked {
+@media (min-width: 960px) {
+  .v-card[horizontal] {
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    position: relative;
-    justify-content: space-between;
+
+    &[reverse] {
+      flex-direction: row-reverse;
+    }
+
+    .card-image {
+      max-width: 50%;
+    }
+
+    .card-stacked {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      position: relative;
+      justify-content: space-between;
+    }
   }
+}
+.v-card .v-card__actions[right] {
+  justify-content: flex-end;
 }

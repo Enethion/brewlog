@@ -1,34 +1,22 @@
 <template>
-  <v-layout justify-center align-center>
-    <v-flex xs12 lg8>
-      <v-card horizontal>
-        <v-card-media
-          class="white--text"
-          height="200px"
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-        >
-          <v-container fill-height fluid>
-            <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                <span class="headline">Top 10 Australian beaches</span>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-card-media>
-        <div class="card-stacked">
-        <v-card-title>
-          <div>
-            <span class="grey--text">Number 10</span><br>
-            <span>Whitehaven Beach</span><br>
-            <span>Whitsunday Island, Whitsunday Islands</span>
-          </div>
-        </v-card-title>
-        <v-card-actions>
-          <v-btn flat color="orange">Share</v-btn>
-          <v-btn flat color="orange">Explore</v-btn>
-        </v-card-actions>
-        </div>
-      </v-card>
+  <v-layout justify-center align-top wrap>
+    <v-flex xs12 lg8 px-1>
+      <short-post v-for="(item, i) in [1,2,3,4,5,6,7,8,9]" :key="i" />
+    </v-flex>
+    <v-flex tag="aside" xs12 lg4 px-1>
+      <!-- <popular-posts /> -->
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+import ShortPost from "components/posts/ShortPost"
+import PopularPosts from "components/posts/PopularPosts"
+
+export default {
+  components: {
+    ShortPost,
+    PopularPosts
+  }
+}
+</script>
