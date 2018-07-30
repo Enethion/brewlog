@@ -5,18 +5,21 @@
     </v-flex>
     <v-flex tag="aside" xs12 lg4 px-1>
       <!-- <popular-posts /> -->
+      <post-categories />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import ShortPost from "components/posts/ShortPost"
-import PopularPosts from "components/posts/PopularPosts"
+// import PopularPosts from "components/posts/PopularPosts"
+import PostCategories from "components/posts/PostCategories"
 
 export default {
   components: {
     ShortPost,
-    PopularPosts
+    // PopularPosts,
+    PostCategories,
   }
 }
 </script>
