@@ -6,6 +6,7 @@
     <v-flex tag="aside" xs12 lg4 px-2>
       <!-- <popular-posts /> -->
       <post-categories />
+      <post-archive />
     </v-flex>
   </v-layout>
 </template>
@@ -14,12 +15,14 @@
 import ShortPost from "components/posts/ShortPost"
 // import PopularPosts from "components/posts/PopularPosts"
 import PostCategories from "components/posts/PostCategories"
+import PostArchive from "components/posts/PostArchive"
 
 export default {
   components: {
     ShortPost,
     // PopularPosts,
     PostCategories,
+    PostArchive,
   }
 }
 </script>
