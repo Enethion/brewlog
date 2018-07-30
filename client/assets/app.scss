@@ -1,3 +1,19 @@
+.v-card {
+
+  .card-stacked {
+    max-width: 100%;
+    overflow: hidden;
+
+    * {
+      max-width: 100%;
+    }
+  }
+
+  .v-card__actions[right] {
+    justify-content: flex-end;
+  }
+}
+
 @media (min-width: 960px) {
   .v-card[horizontal] {
     display: flex;
@@ -20,25 +36,26 @@
   }
 }
 
-.v-card .v-card__actions[right] {
-  justify-content: flex-end;
-}
+$base: -4px, -8px, -16px, -24px, -48px;
 
-$base: (-4px, -8px, -16px, -24px, -48px);
 @for $i from 1 through 5 {
-  .ma--#{$i}, .mx--#{$i}, .ml--#{$i}{
+  .ma--#{$i}, .mx--#{$i}, .ml--#{$i} {
     margin-left: nth($base, $i) !important;
   }
-  .ma--#{$i}, .mx--#{$i}, .mr--#{$i}{
+
+  .ma--#{$i}, .mx--#{$i}, .mr--#{$i} {
     margin-right: nth($base, $i) !important;
   }
-  .ma--#{$i}, .mx--#{$i}, .ml--#{$i}{
+
+  .ma--#{$i}, .mx--#{$i}, .ml--#{$i} {
     margin-left: nth($base, $i) !important;
   }
-  .ma--#{$i}, .my--#{$i}, .mt--#{$i}{
+
+  .ma--#{$i}, .my--#{$i}, .mt--#{$i} {
     margin-top: nth($base, $i) !important;
   }
-  .ma--#{$i}, .my--#{$i}, .mb--#{$i}{
+
+  .ma--#{$i}, .my--#{$i}, .mb--#{$i} {
     margin-bottom: nth($base, $i) !important;
   }
 }

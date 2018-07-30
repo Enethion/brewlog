@@ -13,11 +13,13 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="primary" absolute dark app>
-      <v-toolbar-side-icon class="hidden-lg-and-up" @click="drawer = !drawer"><v-icon>mdi-menu</v-icon></v-toolbar-side-icon>
+      <v-toolbar-side-icon class="hidden-lg-and-up" @click="drawer = !drawer">
+        <v-icon>mdi-menu</v-icon>
+      </v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-md-and-down">
-        <router-link class="v-btn v-btn--flat" tag="button" :to="item.to" v-text="item.title" :key="i" v-for="(item, i) in items"></router-link>
+        <router-link class="v-btn v-btn--flat" tag="button" :to="item.to" v-text="item.title" :key="i" v-for="(item, i) in items" />
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
@@ -28,26 +30,28 @@
       </v-container>
     </v-content>
     <v-footer absolute app>
-      <span>&copy; 2017</span>
+      <v-container pa-0>
+        <span>&copy; 2017</span>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-  import Meta from 'mixins/meta'
+import Meta from "mixins/meta";
 
-  export default {
-    mixins: [Meta],
+export default {
+  mixins: [Meta],
 
-    data () {
-      return {
-        drawer: false,
-        items: [
-          { icon: 'apps', title: 'Blog', to: '/' },
-          { icon: 'bubble_chart', title: 'Warki', to: '/inspire' }
-        ],
-        title: 'BrewLog'
-      }
-    }
+  data() {
+    return {
+      drawer: false,
+      items: [
+        { icon: "apps", title: "Blog", to: "/" },
+        { icon: "bubble_chart", title: "Warki", to: "/inspire" }
+      ],
+      title: "BrewLog"
+    };
   }
+};
 </script>
